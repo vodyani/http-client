@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/vodyani/http-client/compare/v1.0.0...v1.0.1) (2022-09-27)
+
+
+### Bug Fixes
+
+* test tsconfig 🐛 ([2063b9c](https://github.com/vodyani/http-client/commit/2063b9cb7788c53acf228faadc845e9c24f91778))
+
 ## [1.0.1-beta.1](https://github.com/vodyani/http-client/compare/v1.0.0...v1.0.1-beta.1) (2022-09-27)
 
 
