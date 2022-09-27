@@ -1,0 +1,79 @@
+{
+  "name": "@vodyani/http-client",
+  "license": "MIT",
+  "version": "1.0.0",
+  "author": "ChoGathK",
+  "description": "Vodyani http request client.",
+  "homepage": "https://github.com/vodyani/http-client#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vodyani/http-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vodyani/http-client/issues"
+  },
+  "keywords": [
+    "vodyani",
+    "nodejs",
+    "javascript",
+    "typescript",
+    "npm-package"
+  ],
+  "files": [
+    "package.json",
+    "README.MD",
+    "LICENSE",
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "local": "npm i && npm i @vodyani/eslint-config -D && npx husky install",
+    "build": "rm -rf dist && tsc",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint ./src ./test && tsc",
+    "lint:fix": "eslint --fix --ext .ts src/ test/",
+    "lint:html-report": "eslint ./src ./test -f html -o eslint-report.html",
+    "lint:json-report": "eslint ./src ./test -f json -o eslint-report.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "eslintConfig": {
+    "extends": "@vodyani"
+  },
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testRegex": "(/test/.spec.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleNameMapper": {
+      "@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.ts$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "./node_modules/(?!(lodash-es|other-es-lib))"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "16.3.0",
+    "@commitlint/config-conventional": "16.2.4",
+    "@types/jest": "27.5.2",
+    "@types/node": "16.11.56",
+    "@vodyani/eslint-config": "^1.1.0",
+    "husky": "7.0.4",
+    "jest": "27.5.1",
+    "ts-jest": "27.1.5",
+    "typescript": "4.8.2"
+  },
+  "dependencies": {
+    "@vodyani/class-decorator": "^8.2.3",
+    "@vodyani/core": "^8.8.1",
+    "agentkeepalive": "^4.2.1",
+    "axios": "^0.27.2"
+  }
+}
