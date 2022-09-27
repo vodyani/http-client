@@ -17,7 +17,9 @@
     "nodejs",
     "javascript",
     "typescript",
-    "npm-package"
+    "npm-package",
+    "http-client",
+    "request"
   ],
   "files": [
     "package.json",
