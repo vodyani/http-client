@@ -1,6 +1,6 @@
 # Vodyani http-client
 
-**🚀 Vodyani http request client.**
+🚀 一个通用的 http 请求客户端.
 
 [![Npm](https://img.shields.io/npm/v/@vodyani/http-client/latest.svg)](https://www.npmjs.com/package/@vodyani/http-client)
 [![Npm](https://img.shields.io/npm/v/@vodyani/http-client/beta.svg)](https://www.npmjs.com/package/@vodyani/http-client)
@@ -18,8 +18,8 @@ npm install @vodyani/http-client
 
 ## Getting started
 
-- [使用文档 📚](https://vodyani.netlify.app/docs/other/http-client)
-- [Documentation 📚](https://vodyani.netlify.app/en/docs/other/http-client)
+- [使用文档 📚](https://vodyani.netlify.app/docs/advanced/http-client)
+- [Documentation 📚](https://vodyani.netlify.app/en/docs/advanced/http-client)
 
 ## Questions
 
