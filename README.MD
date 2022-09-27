@@ -16,9 +16,14 @@
 npm install @vodyani/http-client
 ```
 
-## Usage
+## Getting started
 
-...
+- [使用文档 📚](https://vodyani.netlify.app/docs/other/http-client)
+- [Documentation 📚](https://vodyani.netlify.app/en/docs/other/http-client)
+
+## Questions
+
+- [Discussions 🧐](https://github.com/vodyani/http-client/discussions)
 
 ## Team
 
