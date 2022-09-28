@@ -1,7 +1,7 @@
 {
   "name": "@vodyani/http-client",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "ChoGathK",
   "description": "Vodyani http request client.",
   "homepage": "https://github.com/vodyani/http-client#readme",
