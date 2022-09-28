@@ -1,6 +1,6 @@
 # Vodyani http-client
 
-🚀 一个通用的 http 请求客户端.
+🚀 一个通用的 http 请求客户端
 
 [![Npm](https://img.shields.io/npm/v/@vodyani/http-client/latest.svg)](https://www.npmjs.com/package/@vodyani/http-client)
 [![Npm](https://img.shields.io/npm/v/@vodyani/http-client/beta.svg)](https://www.npmjs.com/package/@vodyani/http-client)
