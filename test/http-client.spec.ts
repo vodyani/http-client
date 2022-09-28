@@ -83,22 +83,22 @@ describe('HttpClient', () => {
   it('getBuffer', async () => {
     const result = await imageClient.getBuffer(imageBasePath);
     expect(Buffer.isBuffer(result)).toBe(true);
-  });
+  }, 15000);
 
   it('getStream', async () => {
     const result = await imageClient.getStream(imageBasePath);
     expect(result instanceof Stream).toBe(true);
-  });
+  }, 15000);
 
   it('getBase64', async () => {
     const result = await imageClient.getBase64(imageBasePath);
     expect(typeof result === 'string').toBe(true);
-  });
+  }, 15000);
 
   it('getAndDownload', async () => {
     const path = await imageClient.getAndDownload(imageBasePath, tempPath + '/temp.png');
     expect(existsSync(path)).toBe(true);
-  });
+  }, 15000);
 
   it('post', async () => {
     const result = await client.post('/test', { data: { name: 'chogath' }});
