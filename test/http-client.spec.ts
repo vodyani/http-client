@@ -14,8 +14,8 @@ let server: Server = null;
 let app: express.Express = null;
 
 const baseURL = 'http://localhost:3000';
-const imageBaseUrl = 'https://www.baidu.com';
-const imageBasePath = '/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png';
+const imageBaseUrl = 'https://avatars0.githubusercontent.com';
+const imageBasePath = '/u/49223198?v=3&s=55';
 
 const httpAgent = new AgentKeepAlive({ timeout: 15000 });
 const provider = new HttpClientProvider({ baseURL, httpAgent });
