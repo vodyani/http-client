@@ -7,6 +7,7 @@
 [![Npm](https://img.shields.io/npm/dm/@vodyani/http-client)](https://www.npmjs.com/package/@vodyani/http-client)
 [![License](https://img.shields.io/github/license/vodyani/http-client)](LICENSE)
 <br>
+[![codecov](https://codecov.io/gh/vodyani/http-client/branch/master/graph/badge.svg?token=NAKM7FHL7T)](https://codecov.io/gh/vodyani/http-client)
 ![Workflow](https://github.com/vodyani/http-client/actions/workflows/release.yml/badge.svg)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
