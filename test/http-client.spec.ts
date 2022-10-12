@@ -8,7 +8,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as formidable from 'express-formidable';
 
-import { AgentKeepAlive, HttpClientProvider } from '../src';
+import { AgentKeepAlive, HttpClientAdapter } from '../src';
 
 let server: Server = null;
 let app: express.Express = null;
@@ -18,13 +18,17 @@ const imageBaseUrl = 'https://avatars0.githubusercontent.com';
 const imageBasePath = '/u/49223198?v=3&s=55';
 
 const httpAgent = new AgentKeepAlive({ timeout: 15000 });
-const provider = new HttpClientProvider({ baseURL, httpAgent });
-const imageProvider = new HttpClientProvider({ baseURL: imageBaseUrl, httpAgent });
+const imageProvider = new HttpClientAdapter();
+const provider = new HttpClientAdapter();
+
+imageProvider.create({ baseURL: imageBaseUrl, httpAgent });
+provider.create({ baseURL, httpAgent });
+provider.redeploy({ baseURL, httpAgent });
 
 const tempPath = resolve(__dirname, './temp');
 
-const client = provider.getInstance();
-const imageClient = imageProvider.getInstance();
+const client = provider.connect();
+const imageClient = imageProvider.connect();
 
 beforeAll(async () => {
   app = express();

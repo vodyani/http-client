@@ -1,25 +1,31 @@
 import { Injectable } from '@nestjs/common';
 import { This } from '@vodyani/class-decorator';
-import { Client } from '@vodyani/core';
+import { IClientAdapter } from '@vodyani/core';
 
 import { AxiosRequestConfig } from '../common';
 import { HttpClient } from '../struct';
 
 @Injectable()
-export class HttpClientProvider implements Client<HttpClient> {
+export class HttpClientAdapter implements IClientAdapter<HttpClient> {
   private instance: HttpClient;
 
-  constructor(config?: AxiosRequestConfig) {
+  @This
+  public create(config?: AxiosRequestConfig) {
     this.instance = new HttpClient(config);
   }
 
   @This
-  public getInstance() {
+  public connect() {
     return this.instance;
   }
 
   @This
   public close() {
     this.instance = null;
+  }
+
+  @This
+  public redeploy(config?: AxiosRequestConfig) {
+    this.instance = new HttpClient(config);
   }
 }
