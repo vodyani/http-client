@@ -1,3 +1,10 @@
+# [1.2.0-beta.1](https://github.com/vodyani/http-client/compare/v1.1.0...v1.2.0-beta.1) (2022-10-12)
+
+
+### Features
+
+* update adapter usage ([290764c](https://github.com/vodyani/http-client/commit/290764cd70a74ca2079f756ef6e17219bf47022c))
+
 # [1.1.0](https://github.com/vodyani/http-client/compare/v1.0.1...v1.1.0) (2022-09-28)
 
 
