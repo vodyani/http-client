@@ -1,4 +1,4 @@
-import { existsSync, writeFileSync } from 'fs';
+import { writeFileSync } from 'fs';
 import { Stream } from 'stream';
 
 import { This } from '@vodyani/class-decorator';
@@ -32,7 +32,6 @@ export class HttpClient {
       Object.assign({ responseType: 'arraybuffer' }, config),
     );
 
-    if (!result) return null;
     return result.data as Buffer;
   }
 
@@ -43,27 +42,18 @@ export class HttpClient {
       Object.assign({ responseType: 'stream' }, config),
     );
 
-    if (!result) return null;
     return result.data as Stream;
   }
 
   @This
   public async getBase64(url: string, config?: AxiosRequestConfig) {
     const data = await this.getBuffer(url, config);
-
-    if (!data) return null;
     return data.toString('base64');
   }
 
   @This
   public async getAndDownload(url: string, path: string, config?: AxiosRequestConfig) {
-    if (!existsSync(path)) {
-      throw new Error(`The ${path} does not exist`);
-    }
-
     const buffer = await this.getBuffer(url, config);
-
-    if (!buffer) return null;
 
     writeFileSync(path, buffer, 'binary');
 
@@ -73,7 +63,7 @@ export class HttpClient {
   /** Method POST */
   @This
   public async post(url: string, config?: AxiosRequestConfig) {
-    const result = await this.instance.post(url, config.data, config);
+    const result = await this.instance.post(url, config?.data, config);
     return result;
   }
 
@@ -84,20 +74,16 @@ export class HttpClient {
   }
 
   @This
-  public async postForm(url: string, data: Record<string, any>, config: AxiosRequestConfig) {
-    const form = new FormData();
-    const configs = Object.assign({ headers: form.getHeaders() }, config);
-
-    Object.keys(data).forEach((key) => form.append(key, data[key]));
-
-    const result = await this.instance.postForm(url, form, configs);
+  public async postForm(url: string, data: Record<string, any>, config?: Omit<AxiosRequestConfig, 'data'>) {
+    const { configData, formData } = this.getFormDataConfig(data, config);
+    const result = await this.instance.postForm(url, formData, configData);
     return result;
   }
 
   /** Method PUT */
   @This
   public async put(url: string, config?: AxiosRequestConfig) {
-    const result = await this.instance.put(url, config.data, config);
+    const result = await this.instance.put(url, config?.data, config);
     return result;
   }
 
@@ -108,20 +94,16 @@ export class HttpClient {
   }
 
   @This
-  public async putForm(url: string, data: Record<string, any>, config: AxiosRequestConfig) {
-    const form = new FormData();
-    const configs = Object.assign({ headers: form.getHeaders() }, config);
-
-    Object.keys(data).forEach((key) => form.append(key, data[key]));
-
-    const result = await this.instance.putForm(url, form, configs);
+  public async putForm(url: string, data: Record<string, any>, config?: Omit<AxiosRequestConfig, 'data'>) {
+    const { configData, formData } = this.getFormDataConfig(data, config);
+    const result = await this.instance.putForm(url, formData, configData);
     return result;
   }
 
   /** Method PATCH */
   @This
   public async patch(url: string, config?: AxiosRequestConfig) {
-    const result = await this.instance.patch(url, config.data, config);
+    const result = await this.instance.patch(url, config?.data, config);
     return result;
   }
 
@@ -132,13 +114,9 @@ export class HttpClient {
   }
 
   @This
-  public async patchForm(url: string, data: Record<string, any>, config: AxiosRequestConfig) {
-    const form = new FormData();
-    const configs = Object.assign({ headers: form.getHeaders() }, config);
-
-    Object.keys(data).forEach((key) => form.append(key, data[key]));
-
-    const result = await this.instance.patchForm(url, form, configs);
+  public async patchForm(url: string, data: Record<string, any>, config?: Omit<AxiosRequestConfig, 'data'>) {
+    const { configData, formData } = this.getFormDataConfig(data, config);
+    const result = await this.instance.patchForm(url, formData, configData);
     return result;
   }
 
@@ -157,7 +135,16 @@ export class HttpClient {
   }
 
   /** Common */
-  private async getDataValue(result: Record<string, any>, key = 'data') {
-    return result?.data[key] || null;
+  private getFormDataConfig(data: Record<string, any>, config?: Omit<AxiosRequestConfig, 'data'>) {
+    const formData = new FormData();
+    const configData = Object.assign({ headers: formData.getHeaders() }, config);
+
+    Object.keys(data).forEach((key) => formData.append(key, data[key]));
+
+    return { formData, configData };
+  }
+
+  private getDataValue(result: Record<string, any>, key: string) {
+    return result.data[key];
   }
 }

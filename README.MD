@@ -1,12 +1,13 @@
 # Vodyani http-client
 
-🚀 一个通用的 http 请求客户端.
+🚀 一个通用的 http 请求客户端
 
 [![Npm](https://img.shields.io/npm/v/@vodyani/http-client/latest.svg)](https://www.npmjs.com/package/@vodyani/http-client)
 [![Npm](https://img.shields.io/npm/v/@vodyani/http-client/beta.svg)](https://www.npmjs.com/package/@vodyani/http-client)
 [![Npm](https://img.shields.io/npm/dm/@vodyani/http-client)](https://www.npmjs.com/package/@vodyani/http-client)
 [![License](https://img.shields.io/github/license/vodyani/http-client)](LICENSE)
 <br>
+[![codecov](https://codecov.io/gh/vodyani/http-client/branch/master/graph/badge.svg?token=NAKM7FHL7T)](https://codecov.io/gh/vodyani/http-client)
 ![Workflow](https://github.com/vodyani/http-client/actions/workflows/release.yml/badge.svg)
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 

@@ -1,7 +1,7 @@
 {
   "name": "@vodyani/http-client",
   "license": "MIT",
-  "version": "1.0.1-beta.1",
+  "version": "1.1.0",
   "author": "ChoGathK",
   "description": "Vodyani http request client.",
   "homepage": "https://github.com/vodyani/http-client#readme",
@@ -17,7 +17,9 @@
     "nodejs",
     "javascript",
     "typescript",
-    "npm-package"
+    "npm-package",
+    "http-client",
+    "request"
   ],
   "files": [
     "package.json",
@@ -62,9 +64,14 @@
   "devDependencies": {
     "@commitlint/cli": "16.3.0",
     "@commitlint/config-conventional": "16.2.4",
+    "@types/express": "^4.17.14",
+    "@types/express-formidable": "^1.2.0",
     "@types/jest": "27.5.2",
     "@types/node": "16.11.56",
     "@vodyani/eslint-config": "^1.1.0",
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "express-formidable": "^1.2.0",
     "husky": "7.0.4",
     "jest": "27.5.1",
     "ts-jest": "27.1.5",
@@ -72,7 +79,7 @@
   },
   "dependencies": {
     "@vodyani/class-decorator": "^8.2.3",
-    "@vodyani/core": "^8.8.1",
+    "@vodyani/core": "^8.9.2",
     "agentkeepalive": "^4.2.1",
     "axios": "^0.27.2"
   }

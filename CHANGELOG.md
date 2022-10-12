@@ -1,3 +1,17 @@
+# [1.1.0](https://github.com/vodyani/http-client/compare/v1.0.1...v1.1.0) (2022-09-28)
+
+
+### Features
+
+* performance tuning for form data request and style code 🚀 ([0e827cf](https://github.com/vodyani/http-client/commit/0e827cff7dfaa07701d707a42458d8e4f203c652))
+
+## [1.0.1](https://github.com/vodyani/http-client/compare/v1.0.0...v1.0.1) (2022-09-27)
+
+
+### Bug Fixes
+
+* test tsconfig 🐛 ([2063b9c](https://github.com/vodyani/http-client/commit/2063b9cb7788c53acf228faadc845e9c24f91778))
+
 ## [1.0.1-beta.1](https://github.com/vodyani/http-client/compare/v1.0.0...v1.0.1-beta.1) (2022-09-27)
 
 
