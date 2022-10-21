@@ -79,7 +79,6 @@
   },
   "dependencies": {
     "@vodyani/class-decorator": "^8.2.3",
-    "@vodyani/core": "^8.9.2",
     "agentkeepalive": "^4.2.1",
     "axios": "^0.27.2"
   }
