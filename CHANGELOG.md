@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/vodyani/http-client/compare/v1.2.0...v1.3.0) (2022-10-21)
+
+
+### Features
+
+* remove http client adapter ([1d6ac1f](https://github.com/vodyani/http-client/commit/1d6ac1ff4c2e2eda88e54d0a0df87f40d71bed25))
+
 # [1.2.0](https://github.com/vodyani/http-client/compare/v1.1.0...v1.2.0) (2022-10-12)
 
 
